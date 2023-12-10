@@ -4,7 +4,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:krish_news_app/domain/app_error.dart';
 
-import '../../domain/enums.dart';
+import '../../domain/entities/enums.dart';
 
 class ApiCallWithError {
   const ApiCallWithError._();

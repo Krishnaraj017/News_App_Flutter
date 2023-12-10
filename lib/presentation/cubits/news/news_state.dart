@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:krish_news_app/data/models/article_model.dart';
 import 'package:krish_news_app/data/models/news_model.dart';
 import 'package:krish_news_app/domain/app_error.dart';
 
-@freezed
 abstract class NewsState extends Equatable {
   const NewsState();
 }
@@ -19,10 +19,10 @@ class NewsLoadingState extends NewsState {
 }
 
 class NewsSuccessState extends NewsState {
-  final NewsModel newsModel;
-  const NewsSuccessState(this.newsModel);
+  final List<ArticleModel> articles;
+  const NewsSuccessState(this.articles);
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [articles];
 }
 
 class NewsErrorState extends NewsState {

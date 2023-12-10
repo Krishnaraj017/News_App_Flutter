@@ -1,4 +1,4 @@
-import 'package:krish_news_app/domain/enums.dart';
+import 'package:krish_news_app/domain/entities/enums.dart';
 
 class AppError {
   final ErrorType errorType;
