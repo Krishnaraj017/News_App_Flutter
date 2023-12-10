@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:krish_news_app/data/models/article_model.dart';
 import 'package:krish_news_app/presentation/cubits/news/news_cubit.dart';
 import 'package:krish_news_app/presentation/cubits/news/news_state.dart';
 import 'package:krish_news_app/presentation/widgets/news_details.dart';

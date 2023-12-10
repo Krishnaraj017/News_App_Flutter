@@ -1,7 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:krish_news_app/data/models/article_model.dart';
-import 'package:krish_news_app/data/models/news_model.dart';
 import 'package:krish_news_app/domain/app_error.dart';
 
 abstract class NewsState extends Equatable {

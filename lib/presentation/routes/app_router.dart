@@ -14,6 +14,7 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: AllNewsRoute.page, initial: true),
         AutoRoute(page: BreakingNewsRoute.page),
         AutoRoute(page: SearchNewsRoute.page, ),
+        AutoRoute(page: ReminderRoute.page)
        // AutoRoute(page: Reminder.page)
       ];
 }

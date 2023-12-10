@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:krish_news_app/data/models/news_model.dart';
-import 'package:krish_news_app/presentation/cubits/news/news_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:http/http.dart' as http;
 import 'package:krish_news_app/presentation/cubits/search_news/search_news_state.dart';
