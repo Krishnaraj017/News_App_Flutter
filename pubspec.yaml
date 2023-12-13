@@ -56,7 +56,9 @@ dependencies:
   isar_flutter_libs: ^3.1.0+1
   isar_generator: ^3.1.0+1
   path_provider: ^2.1.1
-  flutter_datetime_picker: ^2.0.0
+  flutter_datetime_picker: ^1.5.1
+  flutter_svg: ^2.0.9
+  url_launcher: ^6.1.12
 
 
     
@@ -86,9 +88,10 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/news_mic.png
+    - assets/check_circle.png
+    - assets/thumbnail.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

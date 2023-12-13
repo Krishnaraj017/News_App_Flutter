@@ -4,7 +4,7 @@ import 'package:krish_news_app/data/models/news_model.dart';
 import 'package:krish_news_app/presentation/cubits/news/news_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:http/http.dart' as http;
-
+import 'package:url_launcher/url_launcher.dart';
 class NewsCubit extends Cubit<NewsState> {
   NewsCubit() : super(NewInitialState());
   String category ='';
@@ -21,4 +21,14 @@ class NewsCubit extends Cubit<NewsState> {
       emit(NewsSuccessState(newsData.articles));
     }
   }
+
+  Future<void> openUrl({required url})async{
+     final Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      launchUrl(uri);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 }
+

@@ -1,10 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:krish_news_app/data/models/article_model.dart';
 import 'package:krish_news_app/presentation/cubits/search_news/search_news_cubit.dart';
 import 'package:krish_news_app/presentation/cubits/search_news/search_news_state.dart';
-import 'package:krish_news_app/presentation/screens/all_news_screen.dart';
 import 'package:krish_news_app/presentation/widgets/news_details.dart';
 
 @RoutePage()
@@ -36,28 +34,63 @@ class _SearchNewsScreenState extends State<SearchNewsScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0x1B1B1B1B),
         body: Column(
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                controller: searchController,
-                decoration: InputDecoration(
-                  hintText: 'Enter category, country, or channel',
-                ),
+              child: Row(
+                children: [
+                  Container(
+                    width: 307,
+                    height: 50,
+                    decoration: ShapeDecoration(
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                          width: 1,
+                          color: Colors.black.withOpacity(0.18000000715255737),
+                        ),
+                        borderRadius: BorderRadius.circular(32),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 17.0),
+                      child: TextField(
+                        controller: searchController,
+                        onChanged: (input) {
+                          context
+                              .read<SearchNewsCubit>()
+                              .getSearchNewsFromApi(category: input);
+                          context
+                              .read<SearchNewsCubit>()
+                              .getSearchNewsFromApi(country: input);
+                          context
+                              .read<SearchNewsCubit>()
+                              .getSearchNewsFromApi(channel: input);
+                        },
+                        decoration: const InputDecoration(
+                          hintText: 'Search By Category',
+                          border: InputBorder
+                              .none, // Remove the border of the TextField
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Container(
+                    width: 28,
+                    height: 35,
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                    ),
+                    child: Center(child: Stack(children: [Icon(Icons.search)])),
+                  )
+                ],
               ),
-            ),
-            ElevatedButton(
-              onPressed: () async {
-                try {
-                  await context.read<SearchNewsCubit>().getSearchNewsFromApi(
-                        category: searchController.text,
-                      );
-                } catch (e) {
-                  print("Error fetching news: $e");
-                }
-              },
-              child: const Text("Search"),
             ),
             const SizedBox(height: 12),
             BlocBuilder<SearchNewsCubit, SearchNewsState>(

@@ -27,10 +27,16 @@ abstract class _$AppRouter extends RootStackRouter {
         child: WrappedRoute(child: const BreakingNewsScreen()),
       );
     },
-    ReminderRoute.name: (routeData) {
+    OnBoardingRouteTwo.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ReminderScreen(),
+        child: const OnBoardingScreenTwo(),
+      );
+    },
+    OnboardingRouteOne.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const OnboardingScreenOne(),
       );
     },
     SearchNewsRoute.name: (routeData) {
@@ -71,15 +77,29 @@ class BreakingNewsRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [ReminderScreen]
-class ReminderRoute extends PageRouteInfo<void> {
-  const ReminderRoute({List<PageRouteInfo>? children})
+/// [OnBoardingScreenTwo]
+class OnBoardingRouteTwo extends PageRouteInfo<void> {
+  const OnBoardingRouteTwo({List<PageRouteInfo>? children})
       : super(
-          ReminderRoute.name,
+          OnBoardingRouteTwo.name,
           initialChildren: children,
         );
 
-  static const String name = 'ReminderRoute';
+  static const String name = 'OnBoardingRouteTwo';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [OnboardingScreenOne]
+class OnboardingRouteOne extends PageRouteInfo<void> {
+  const OnboardingRouteOne({List<PageRouteInfo>? children})
+      : super(
+          OnboardingRouteOne.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'OnboardingRouteOne';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
