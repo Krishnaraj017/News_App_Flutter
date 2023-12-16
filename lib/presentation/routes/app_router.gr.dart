@@ -27,6 +27,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: WrappedRoute(child: const BreakingNewsScreen()),
       );
     },
+    MyRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const MyScreen(),
+      );
+    },
     OnBoardingRouteTwo.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -72,6 +78,20 @@ class BreakingNewsRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'BreakingNewsRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [MyScreen]
+class MyRoute extends PageRouteInfo<void> {
+  const MyRoute({List<PageRouteInfo>? children})
+      : super(
+          MyRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MyRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

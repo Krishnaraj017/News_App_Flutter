@@ -92,6 +92,7 @@ flutter:
     - assets/news_mic.png
     - assets/check_circle.png
     - assets/thumbnail.png
+    - assets/vector.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
