@@ -21,7 +21,7 @@ class OnBoardingScreenTwo extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.only(left: 18.0, top: 8),
                   child: Text(
-                    'NEWSY',
+                    'NEWS TODAY',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 24.62,

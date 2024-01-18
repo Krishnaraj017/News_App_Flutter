@@ -54,7 +54,7 @@ class _TestScreenState extends State<AllNewsScreen> {
                       width: 120,
                       // height: 25,
                       child: Text(
-                        'Newsy',
+                        'News',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 30,
